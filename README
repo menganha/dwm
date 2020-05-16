@@ -1,4 +1,4 @@
-dwm - dynamic window manager
+dwm - dynamic window manager (menganha's fork)
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
 
@@ -46,3 +46,9 @@ Configuration
 -------------
 The configuration of dwm is done by creating a custom config.h
 and (re)compiling the source code.
+
+What does this fork includes
+-------------
+* fixborder and scratchpad patches
+* saner keybindings
+* gruvbox theme
