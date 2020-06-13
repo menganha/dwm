@@ -5,7 +5,7 @@ static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrains Mono:pixelsize=14" };
+static const char *fonts[]          = {"JetBrains Mono:pixelsize=14", "Font Awesome 5 Free Solid:pixelsize=14"};
 static const char dmenufont[]       = "JetBrains Mono:pixelsize=14";
 static const char col_gray1[]       = "#1d2021"; /* "#222222"; */ /* black */
 static const char col_gray2[]       = "#1d2021"; /* "#444444"; */ /* slightly lighter than above black */
@@ -61,7 +61,6 @@ static const char *termcmd[]  = { "st", NULL };
 static const char *shutdowncmd[]  = { "dmenu_shutdown", col_gray3, col_gray1, col_gray4, col_cyan, dmenufont, NULL };
 static const char *exitDwm[]  = {"exitDwm", col_gray3, col_gray1, col_gray4, col_cyan, dmenufont, NULL };
 static const char *lockScreen[]  = {"i3_lockScreen", "lock", NULL };
-static const char *firefox[]  = {"firefox", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
@@ -83,8 +82,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
+	{ MODKEY,                       XK_space,  zoom,           {0} },
+	{ MODKEY|ShiftMask,             XK_space,  setlayout,      {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
@@ -101,7 +100,6 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
     { MODKEY,                       XK_z,      spawn,          {.v = lockScreen} },
-    { MODKEY|ShiftMask,             XK_m,      spawn,          {.v = firefox} },
     { MODKEY|ShiftMask,             XK_e,      spawn,          {.v = exitDwm} },
 	{ MODKEY|ShiftMask,             XK_q,      spawn,          {.v = shutdowncmd} },
 };
