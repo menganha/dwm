@@ -1,4 +1,4 @@
-dwm - dynamic window manager
+dwm - dynamic window manager (menganha's fork)
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
 
@@ -41,6 +41,12 @@ like this in your .xinitrc:
     done &
     exec dwm
 
+What does this fork includes
+-------------
+* fixborder patch (opaque borders)
+* smartborders patch (no borders when there's a single window)
+* attachbelow patch (attach new window below the currently selected)
+* always center patch (floating windows are centered by default)
 
 Configuration
 -------------
